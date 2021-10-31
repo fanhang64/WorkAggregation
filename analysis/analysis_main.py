@@ -13,7 +13,7 @@ class Analyze():
     
     # 以下配置请修改
     user = "root"
-    password = "zym233521"
+    password = "123"
     
     
     db = pymysql.connect(host="localhost", user=user, password=password, charset="utf8")
@@ -28,13 +28,15 @@ class Analyze():
         script_path = os.path.realpath(__file__)
         script_dir = os.path.dirname(script_path)
         sys.path.append(script_dir)
+
+        from analysis import input_data, process_data, analyze_data
         input_data.main()
 
         process_data.main()
 
         analyze_data.main()
 
-        test_analyze_data.main()
+        # test_analyze_data.main()
 
 
 if __name__ == '__main__':

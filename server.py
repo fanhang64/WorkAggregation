@@ -10,12 +10,12 @@ REMOTE_HOST = "../static/js"
 app = Flask(__name__)
 # 解决缓存刷新问题
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = timedelta(seconds=2)
-# 原日志
-logging.getLogger('werkzeug').setLevel(logging.ERROR)
-# 文件输出日志 自写日志
-handler = logging.FileHandler(filename='log.txt', mode='a')
-handler.setLevel(logging.ERROR)
-app.logger.addHandler(handler)
+# # 原日志
+# logging.getLogger('werkzeug').setLevel(logging.ERROR)
+# # 文件输出日志 自写日志
+# handler = logging.FileHandler(filename='log.txt', mode='a')
+# handler.setLevel(logging.ERROR)
+# app.logger.addHandler(handler)
 
 
 # @app.errorhandler(500)
@@ -85,4 +85,4 @@ def us():
 
 
 if __name__ == '__main__':
-    app.run(debug=True,host='127.0.0.1',port=80)
+    app.run(debug=True,host='127.0.0.1')

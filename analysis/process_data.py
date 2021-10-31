@@ -184,38 +184,32 @@ def qcwy1():
             res = 0
             sql = "update qcwy set number = " + str(res) + " where id = %s" % str(id)
             cursor.execute(sql)
-            # db.commit()
         elif i[1].find('-') != -1:
             pattern = re.compile(r'\d+')
             res = re.findall(pattern, i[1])
             res = int((int(res[0]) + int(res[1])) / 2)
             sql = "update qcwy set number = " + str(res) + " where id = %s" % str(id)
             cursor.execute(sql)
-            # db.commit()
         else:
             pattern = re.compile(r'\d+')
             res = re.findall(pattern, i[1])
             sql = "update qcwy set number = " + str(res[0]) + " where id = %s" % str(id)
             cursor.execute(sql)
-            # db.commit()
         # 提经验值
         if i[0].isalpha():
             sql = "update qcwy set experience = '0' where id = %s" % str(id)
             cursor.execute(sql)
-            # db.commit()
         elif i[0].find('-') != -1:
             pattern = re.compile(r'\d+')
             res = re.findall(pattern, i[0])
             res = int((int(res[0]) + int(res[1])) / 2)
             sql = "update qcwy set experience = " + str(res) + " where id = %s" % str(id)
             cursor.execute(sql)
-            # db.commit()
         else:
             pattern = re.compile(r'\d+')
             res = re.findall(pattern, i[0])
             sql = "update qcwy set experience = " + str(res[0]) + " where id = %s" % str(id)
             cursor.execute(sql)
-            # db.commit()
         if int(id) % 100000 == 0:
             db.commit()
         print(id)
