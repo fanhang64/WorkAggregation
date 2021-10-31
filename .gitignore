@@ -3,3 +3,4 @@
 /static/webjs/
 *.pyc
 static/js/*
+*.vscode
